@@ -28,14 +28,14 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import QtQuick.Controls 1.4
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents
+import QtQuick.Controls
 
 import system76_power_kde 0.1
 
-Item {
+PlasmoidItem {
     function getProfileName() {
         switch (con.getProfile()) {
             case 0:
@@ -76,28 +76,23 @@ Item {
         }
     }
 
-    Plasmoid.fullRepresentation: ColumnLayout {
+    fullRepresentation: ColumnLayout {
         PlasmaComponents.Label {
             text: currentProfileText;
-            color: "black";
         }
-        ExclusiveGroup { id: selectedProfile }
         PlasmaComponents.RadioButton {
             text: "Performance";
             checked: performance;
-            exclusiveGroup: selectedProfile;
             onClicked: con.setProfile(0);
         }
         PlasmaComponents.RadioButton {
             text: "Balanced";
             checked: balanced;
-            exclusiveGroup: selectedProfile;
             onClicked: con.setProfile(1);
         }
         PlasmaComponents.RadioButton {
             text: "Battery";
             checked: battery;
-            exclusiveGroup: selectedProfile;
             onClicked: con.setProfile(2);
         }
     }

@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "yuri6037@outlook.com",
+                "Name": "Yuri Edward"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Control power profile using system76-power daemon",
+        "Icon": "preferences-system-power-management",
+        "Id": "system76_power_kde",
+        "License": "BSD-3-Clause",
+        "Name": "System76 Power",
+        "KPackageStructure": "Plasma/Applet",
+        "Version": "3.0.0",
+        "Website": "https://github.com/Yuri6067/KDE-System76-Power"
+    },
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

@@ -7,19 +7,20 @@ project(system76_power_kde
 find_package(ECM REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
+set (QT_MAJOR_VERSION 6)
+
 include(GenerateExportHeader)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 
-find_package(Qt5
-             CONFIG REQUIRED
+find_package(Qt6
+             CONFIG REQUIRED COMPONENTS
              Core
              DBus
              Quick)
 
-find_package(KF5 ${KF5_REQUIRED_VERSION}
-        REQUIRED COMPONENTS
-        Plasma)
+find_package(KF6 ${KF6_REQUIRED_VERSION} REQUIRED COMPONENTS)
+find_package(Plasma 6.0.0 REQUIRED)
 
 add_subdirectory(plugin)
 add_subdirectory(plasmoid)
